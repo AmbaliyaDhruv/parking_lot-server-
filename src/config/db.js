@@ -1,8 +1,8 @@
 
 const mongoose=require("mongoose");
-
+require("dotenv").config();
 const connect=()=>{
-    return mongoose.connect("mongodb+srv://dhruv:dhruv_1112@cluster0.1qaar.mongodb.net/parkingLot?retryWrites=true&w=majority")
+    return mongoose.connect(process.env.MONGODB_URL)
  }
  
 

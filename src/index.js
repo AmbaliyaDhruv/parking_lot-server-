@@ -5,6 +5,7 @@ const express = require('express');
 const spot=require('./controller/spot.controller');
 const floors=require('./controller/floors.controller');
 const assistat=require('./controller/assistat.controller');
+const port=process.env.PORT || 3050;
 const app = express();
 app.use(cors({origin:"*"}));
 
@@ -14,7 +15,7 @@ app.use("/spot",spot)
 app.use("/floor",floors)
 app.use("/assistat",assistat)
 
-app.listen(3050,async()=>{
+app.listen(port,async()=>{
           try {
              connect();
                 console.log("http://localhost:3050/"); 
